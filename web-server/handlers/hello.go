@@ -2,8 +2,8 @@ package handlers
 import (
 	"io/ioutil"
 	"net/http"
-	"fmt"
 	"log"
+	"fmt"
 )
 //log.Logger is from package log which takes in a struct type.
 
@@ -17,13 +17,13 @@ func NewHello(l *log.Logger) *Hello{
 
 //define a method which satisfies the handler interface.
 func(h *Hello) ServeHTTP(rw http.ResponseWriter, r *http.Request) {
-    h.l.Println("hello world")
+    h.l.Println("endpointhit")
 	d, err := ioutil.ReadAll(r.Body) //store the reads from the body to the variable d.	
 	if err != nil {
 		http.Error(rw, "oops", http.StatusBadRequest)
 		return
 	}
-	fmt
+	fmt.Fprintf(rw, "hello %s", d)
 
 	
 }

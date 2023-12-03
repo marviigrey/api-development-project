@@ -3,7 +3,7 @@ import (
 	"net/http"
 	"log"
 	"os"
-	""
+	"github.com/marviigrey/golang-microservice-projects/web-server/handlers"
 )
 
 func main() {
